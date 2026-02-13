@@ -1,4 +1,7 @@
+.classpath
 .gradle
+.gradletasknamecache
+.project
 /node_modules/
 !**/src/**/build/
 
@@ -12,10 +15,3 @@ gradle-app.setting
 !gradle-wrapper.properties
 
 # Cache of project
-.gradletasknamecache
-
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath

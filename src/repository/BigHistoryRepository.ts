@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import moment from "moment";
 
 // BigHistoryRepository.ts
@@ -7,18 +7,18 @@ class BigHistoryRepository {
 	constructor() { }
 
 	async root(request?: any, onSuccess?: any, onError?: any, element?: any) {
-		return axios.get("./api/0?expandChildren=true")
+		return axios.get("/terran/bhistory/0?expandChildren=true")
 			.then(response => onSuccess && onSuccess(request, response.data, element))
 			.catch(error => onError && onError(request, error, element));
 	}
 	async search(request: any, onSuccess?: any, onError?: any, element?: any) {
-		return axios.post("./api/search", request)
+		return axios.post("/terran/bhistory/search", request)
 			.then(response => onSuccess && onSuccess(request, response.data, element))
 			.catch(error => onError && onError(request, error, element));
 	}
 	async download(request: any, onSuccess?: any, onError?: any, element?: any) {
 		return axios({
-			url: '/api/download',
+			url: '/terran/bhistory/download',
 			method: 'GET',
 			responseType: 'blob',
 		}).then(response => {
@@ -34,7 +34,7 @@ class BigHistoryRepository {
 		.catch(error => onError && onError(request, error, element));
 	}
 	async update(request: any, onSuccess?: any, onError?: any, element?: any) {
-		return axios.put("./api/" + request.id, request)
+		return axios.put("/terran/bhistory/" + request.id, request)
 			.then(response => onSuccess && onSuccess(request, response.data, element))
 			.catch(error => onError && onError(request, error, element));
 	}
